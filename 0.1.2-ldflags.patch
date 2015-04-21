@@ -1,0 +1,11 @@
+--- origsrc/libe-book-0.1.2/src/lib/Makefile.am	2014-12-31 02:32:41.000000000 -0600
++++ src/libe-book-0.1.2/src/lib/Makefile.am	2015-04-21 16:57:20.148587600 -0500
+@@ -9,7 +9,7 @@ BUILT_SOURCES = \
+ 	FB2Token.inc \
+ 	RBToken.inc
+ 
+-if PLATFORM_WIN32
++if OS_WIN32
+ version_info = -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) -avoid-version
+ else
+ version_info = -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)

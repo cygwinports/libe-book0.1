@@ -1,0 +1,27 @@
+NAME="libe-book0.1"
+VERSION=0.1.2
+RELEASE=1
+CATEGORY="Libs"
+SUMMARY="E-book import filter library"
+DESCRIPTION="libe-book is a library and a set of tools for reading and
+converting various non-HTML reflowable e-book formats."
+HOMEPAGE="https://sourceforge.net/projects/libebook/"
+SRC_URI="mirror://sourceforge/libebook/libe-book-${VERSION}.tar.xz"
+SRC_DIR="libe-book-${VERSION}"
+PATCH_URI="
+	0.1.2-ldflags.patch
+	0.1.2-vpath.patch
+"
+
+PKG_NAMES="libe-book-tools ${NAME}_1 ${NAME}-devel ${NAME}-doc"
+libe_book_tools_CATEGORY="Graphics"
+libe_book_tools_SUMMARY="E-book file converters"
+libe_book_tools_CONTENTS="usr/bin/*.exe"
+libe_book0_1_1_SUMMARY="${SUMMARY} (runtime)"
+libe_book0_1_1_CONTENTS="--exclude=html usr/bin/*-0.1-1.dll usr/share/doc/"
+libe_book0_1_devel_SUMMARY="${SUMMARY} (development)"
+libe_book0_1_devel_CONTENTS="usr/include/ usr/lib/"
+libe_book0_1_doc_SUMMARY="${SUMMARY} (API documentation)"
+libe_book0_1_doc_CONTENTS="usr/share/doc/${NAME}/html/"
+
+KEEP_LA_FILES="none"
