@@ -1,6 +1,6 @@
 NAME="libe-book0.1"
 VERSION=0.1.2
-RELEASE=4
+RELEASE=5
 CATEGORY="Libs"
 SUMMARY="E-book import filter library"
 DESCRIPTION="libe-book is a library and a set of tools for reading and
@@ -23,5 +23,8 @@ libe_book0_1_devel_SUMMARY="${SUMMARY} (development)"
 libe_book0_1_devel_CONTENTS="usr/include/ usr/lib/"
 libe_book0_1_doc_SUMMARY="${SUMMARY} (API documentation)"
 libe_book0_1_doc_CONTENTS="usr/share/doc/${NAME}/html/"
+
+# avoid boost_system dependency with boost-1.59+
+CPPFLAGS+=" -DBOOST_ERROR_CODE_HEADER_ONLY"
 
 KEEP_LA_FILES="none"
